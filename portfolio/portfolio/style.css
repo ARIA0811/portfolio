@@ -1,0 +1,323 @@
+/* [1. 기본 초기화 - 불필요한 동그라미 제거] */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Pretendard', Arial, sans-serif;
+}
+
+body {
+    background: white;
+    overflow-x: hidden;
+}
+
+/* [2. 헤더 스타일 유지] */
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.top-bar {
+    font-size: 12px;
+    padding: 8px 60px;
+    background: #f8f8f8;
+    color: #666;
+    border-bottom: 1px solid #eee;
+}
+
+.main-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+}
+
+.school-name { font-size: 20px; font-weight: 800; }
+
+.menu { list-style: none; display: flex; gap: 30px; }
+.menu a { text-decoration: none; color: #333; font-weight: 600; }
+
+/* 드롭다운 메뉴 (동그라미 완벽 제거) */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: white;
+    min-width: 160px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 10px 0;
+    list-style: none; /* 동그라미 제거 */
+}
+.dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu li { list-style: none; } /* 한 번 더 확인 제거 */
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #555;
+}
+
+/* [3. 메인 화면 - 왼쪽 꽉 채우기 및 텍스트 간격] */
+#home {
+    padding-top: 105px; 
+}
+
+.hero {
+    display: flex;
+    height: calc(100vh - 105px);
+    width: 100%;
+}
+
+.hero-left {
+    width: 60%;
+    background: #ff5c00;
+    /* 왼쪽 여백 없이 0부터 시작 */
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10%; 
+}
+
+.hero-text h1 {
+    font-size: 65px;
+    font-weight: 900;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 25px; /* 제목과 이름 사이 간격 확보 */
+}
+
+.hero-text p {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 30px; /* 이름과 버튼 사이 간격 */
+}
+
+.hero-text button {
+    width: fit-content;
+    padding: 15px 40px;
+    border: none;
+    background: white;
+    color: #ff5c00;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero-text button:hover { background: #333; color: white; }
+
+.hero-right { width: 40%; display: flex; align-items: center; justify-content: center; }
+
+.image-wrapper {
+    width: 350px; /* 사용자님 원본 크기 */
+    height: 450px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
+}
+.image-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+
+/* [4. 상세 페이지 - 여백 및 기능 복구] */
+.content-section {
+    display: none; /* 평소 숨김 */
+}
+
+.content-section.active {
+    display: block !important; /* 클릭 시 반드시 보이게 함 */
+}
+
+.content-section:not(#home) {
+    padding-top: 180px; 
+    padding-left: 10%; /* 왼쪽 벽에서 적절히 띄움 */
+    padding-right: 10%;
+    min-height: 100vh;
+}
+
+.subject-section h2 {
+    font-size: 45px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+/* About Me 상세 섹션 사진 크기 복구 */
+.about img, .personality img, .experience img, .future img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+/* [효과] 등장 애니메이션 초기 상태 */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+/* [효과] 활성화되었을 때 상태 */
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* [레이아웃] About, Personality 등 각 섹션에 애니메이션 적용을 위한 설정 */
+.hero-text, .image-wrapper, .about, .personality, .experience, .future, .subject-section {
+    opacity: 0; /* 초기 상태 */
+}
+
+/* 활성화된 섹션 내의 요소들만 애니메이션 준비 */
+.content-section.active .hero-text,
+.content-section.active .image-wrapper,
+.content-section.active section {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+/* [기능 보정] 섹션 전환 시 레이아웃 겹침 방지 */
+.content-section {
+    display: none;
+}
+.content-section.active {
+    display: block !important;
+}
+
+/* [디자인] 이미지 호버 효과 유지 */
+.image-wrapper:hover, .about img:hover, .personality img:hover, .experience img:hover, .future img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    transition: 0.4s;
+}
+
+/* --- 효과 다시 살리기 --- */
+
+/* 1. 기본 상태: 약간 내려가 있고 투명함 */
+.reveal {
+    opacity: 0 !important;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+/* 2. 활성화 상태: 제자리로 오면서 선명해짐 */
+.reveal.show {
+    opacity: 1 !important;
+    transform: translateY(0);
+}
+
+/* 3. 섹션 전환 시 충돌 방지 */
+.content-section {
+    display: none;
+}
+.content-section.active {
+    display: block !important;
+}
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:40px;
+    margin-top:40px;
+}
+
+.project-card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.project-card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.project-card h3{
+    font-size:20px;
+    margin:15px;
+}
+
+.project-card p{
+    font-size:14px;
+    color:#666;
+    margin:0 15px 20px 15px;
+}
+
+.project-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.12);
+}
+
+.project-link{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* --- About / Personality / Experience / Future 공통 레이아웃 수정 --- */
+
+.about,
+.personality,
+.experience,
+.future {
+    display: flex;
+    align-items: center; /* 세로 중앙 정렬 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    gap: 5%; /* 사진과 글 사이 간격 */
+    margin: 100px auto; /* 위아래 간격 */
+    width: 90%; /* 전체 너비 */
+    max-width: 1200px; /* 너무 퍼지지 않게 최대치 설정 */
+}
+
+/* 왼쪽/오른쪽 영역을 각각 50%씩 차지하게 설정 */
+.about-left, .about-right,
+.personality-left, .personality-right,
+.experience-left, .experience-right,
+.future-left, .future-right {
+    flex: 1; /* 1:1 비율 유지 */
+    width: 50%;
+}
+
+/* 이미지 스타일: 50% 영역 안에서 꽉 차게 */
+.about img, .personality img, .experience img, .future img {
+    width: 100%;
+    max-width: none; /* 기존 500px 제한 해제 */
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    display: block;
+}
+
+/* 텍스트 스타일: 가독성을 위해 여백 조절 */
+.about-right, .personality-left, .experience-right, .future-left {
+    padding: 0 20px;
+}
+
+.about-right h2, .personality-left h2, .experience-right h2, .future-left h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.about-right p, .personality-left p, .experience-right p, .future-left p {
+    font-size: 18px;
+    line-height: 1.8;
+    word-break: keep-all; /* 한글 줄바꿈 예쁘게 */
+}
+
+/* 모바일 대응: 화면이 작아지면 위아래로 배치 */
+@media (max-width: 768px) {
+    .about, .personality, .experience, .future {
+        flex-direction: column !important;
+        text-align: center;
+    }
+    .about-left, .about-right, .personality-left, .personality-right {
+        width: 100%;
+    }
+}
