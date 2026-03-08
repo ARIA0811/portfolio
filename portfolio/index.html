@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>ARIA Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="top-bar">
+        서울로봇고등학교 | 서울특별시 강남구 광평로 20길 63(일원동)
+    </div>
+    <div class="main-bar">
+        <div class="school-name">Seoul Robotics High School</div>
+        <nav class="navbar">
+            <ul class="menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">School</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#programming" class="nav-link">programming</a></li>
+                        <li><a href="#control" class="nav-link">control</a></li>
+                        <li><a href="#general-subjects" class="nav-link">general-subjects</a></li>
+                        <li><a href="#arts" class="nav-link">arts</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Activity</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#Club" class="nav-link">Club</a></li>
+                        <li><a href="#External-Activities" class="nav-link">External-Activities</a></li>
+                        <li><a href="#Conference" class="nav-link">Conference</a></li>
+                        <li><a href="#Projects" class="nav-link">Projects</a></li>
+                        <li><a href="#Certificates" class="nav-link">Certificates</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">imagination</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#빵지술래" class="nav-link">빵지술래</a></li>
+                        <li><a href="#덕질지도" class="nav-link">덕질지도</a></li>
+                        <li><a href="#다이어리" class="nav-link">다이어리</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main id="content-area">
+    <article id="home" class="content-section active">
+        <section class="hero">
+            <div class="hero-left">
+                <div class="hero-text">
+                    <h1>technology to realize<br>my curiosity</h1>
+                    <p>ARIA PARK | Student</p>
+                    <button onclick="scrollToAbout()">About Me</button>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="image-wrapper">
+                    <img src="메인사진.jpg" alt="profile">
+                </div>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="about-left"><img src="다이어리.jpg" alt="about"></div>
+            <div class="about-right">
+                <h2>About Me</h2>
+                <p>일상에 질문을 던지는 호기심에서 시작해,
+                    관찰한 불편함을 기술로 해결하고자 프로그래밍을 배우고 있습니다.
+                    아이디어를 웹으로 구현하며, 생각이 기술이 되고 가치가 되는 과정을 경험하고 있습니다.</p>
+            </div>
+        </section>
+
+        <section class="personality">
+            <div class="personality-left">
+                <h2>Personality</h2>
+                <p>시행착오를 성장의 과정으로 받아들이는 자기성찰적인 성격입니다.
+                    비판과 문제 상황을 객관적으로 바라보며 개선점을 찾고,
+                    저작권 이슈 경험을 통해 책임 의식의 중요성을 배웠습니다.
+                    또한 독서를 통해 시야를 넓히며 실수를 발전의 계기로 삼고 있습니다.</p>
+            </div>
+            <div class="personality-right"><img src="책1.jpg" alt="personality"></div>
+        </section>
+
+        <section class="experience">
+            <div class="experience-left"><img src="독일.jpg" alt="experience"></div>
+            <div class="experience-right">
+                <h2>Experience</h2>
+                <p>독일 교환학생 경험을 통해 ‘다름은 틀림이 아니다’라는 것을 배웠습니다.
+                    가치관이 다른 친구들의 열정을 보며 타인을 제 기준으로 판단하기보다,
+                    그들의 배경과 문화를 이해하려는 태도를 갖추게 되었습니다.
+                    이를 통해 다양한 문화 속에서 열린 시각으로 관계를 형성하는 법을 배웠습니다.</p>
+            </div>
+        </section>
+
+        <section class="future">
+            <div class="future-left">
+                <h2>Future Goals</h2>
+                <p>저는 끊임없이 배우고 성장하는 과정에서 가장 큰 보람을 느낍니다.
+                    아직 기술적으로 부족함을 느끼지만, 그 한계를 두려워하기보다 극복의 과정 속에서 성장할 수 있다고 믿고 있습니다.
+                    앞으로 기술을 통해 세상의 불편함을 해결하며 도전하는 개발자로 성장하고자 합니다.</p>
+            </div>
+            <div class="future-right"><img src="학교.jpg" alt="future"></div>
+        </section>
+    </article>
+
+    <article id="programming" class="content-section">
+    <section class="subject-section">
+        <h2>Programming</h2>
+
+        <div class="project-grid">
+
+            <div class="project-card">
+                <img src="c언어.png">
+                <h3>C언어</h3>
+                <p>C 언어의 기본 문법과 자료형, 조건문과 반복문을 학습하며
+                    프로그래밍의 기본 구조와 로직 설계를 익혔습니다.</p>
+            </div>
+
+            <div class="project-card">
+                <img src="python.png">
+                <h3>Python</h3>
+                <p>CSV 형식의 서울 기온 데이터를 분석하고  
+                    Python으로 데이터 시각화 그래프를 제작했습니다.</p>
+            </div>
+
+            <div class="project-card">
+                <img src="java.png">
+                <h3>Java</h3>
+                <p>Java의 기본 문법과 객체 개념을 학습하고  
+                    사용자 입력을 처리하는 간단한 프로그램을 개발했습니다.</p>
+            </div>
+
+        </div>
+    </section>
+</article>
+
+    <article id="control" class="content-section">
+    <section class="subject-section">
+        <h2>control</h2>
+
+        <div class="project-grid">
+
+            <div class="project-card">
+                <img src="아두이노.png">
+                <h3>아두이노</h3>
+                <p>아두이노로 LED, 모터, 초음파 센서 등을 활용한 실습을 진행하고  
+                토양 수분 센서를 이용해 물 필요 여부를 알리는 장치를 제작했습니다.</p>
+            </div>
+
+            <div class="project-card">
+                <img src="라라.png">
+                <h3>라즈베리파이</h3>
+                <p>라즈베리파이에서 기본적인 Linux 명령어를 사용하고  
+                    카메라를 이용해 사람을 감지하면 알림이 나타나는 프로그램을 제작했습니다.</p>
+            </div>
+
+            <div class="project-card">
+                <img src="아트메가.gif">
+                <h3>아트메가</h3>
+                <p>ATmega 기반 마이크로컨트롤러를 활용해  
+                다양한 전자 소자를 연결하고 제어하는 실습을 진행했습니다.</p>
+            </div>
+
+        </div>
+    </section>
+</article>
+
+    <article id="general-subjects" class="content-section">
+    <section class="subject-section">
+        <h2>general-subjects</h2>
+
+        <div class="project-grid">
+
+            <div class="project-card">
+                <img src="수학.png">
+                <h3>수학</h3>
+                <p>컴퓨터와 로봇 공학에 필요한 미적분 개념을 학습하고  
+                    로봇 상황에 맞는 수학 문제를 직접 만들어 풀이했습니다.</p>
+            </div>
+
+            <div class="project-card">
+                <img src="물리.png">
+                <h3>물리</h3>
+                <p>물리 개념 이해를 위해 수능 기출 문제를 풀이하며  
+                    물리적 사고력과 문제 해결 능력을 향상시켰습니다.</p>
+            </div>
+
+            <div class="project-card">
+                <img src="영어.jpeg">
+                <h3>영어</h3>
+                <p>원어민 선생님과 함께 영어 수업을 진행하며  
+                    영화 시청과 다양한 활동을 통해 영어로 소통하는 경험을 쌓았습니다.</p>
+            </div>
+
+        </div>
+    </section>
+</article>
+    
+    <article id="arts" class="content-section">
+    <section class="subject-section">
+        <h2>arts</h2>
+
+        <div class="project-grid">
+
+            <div class="project-card">
+                <img src="음악.jpg">
+                <h3>음악</h3>
+                <p>친구들과 컵타 활동을 진행하며  
+                    모둠 협업을 통해 공연을 준비하는 경험을 했습니다.</p>
+            </div>
+
+            <div class="project-card">
+                <img src="체육.jpeg">
+                <h3>체육</h3>
+                <p>친구들과 컵타 활동을 진행하며  
+                    모둠 협업을 통해 공연을 준비하는 경험을 했습니다.</p>
+            </div>
+
+            <div class="project-card">
+                <img src="디자인.avif">
+                <h3>디자인</h3>
+                <p>로봇청소기 디자인을 기획하며  
+                    큰 장애물을 만나면 팔 구조가 나와 넘어가는 아이디어를 구상하고 스케치로 표현했습니다.스파게티</p>
+            </div>
+
+        </div>
+    </section>
+</article>
+    
+    <article id="Club" class="content-section">
+    <section class="subject-section">
+        <h2>Club</h2>
+
+        <div class="project-grid">
+
+            <div class="project-card">
+                <img src="라인.jpg">
+                <h3>직업박람회 참여</h3>
+                <p>ROS를 활용하는 동아리에서 직업박람회 부스를 운영하며  
+                    라인 트레이싱 로봇 시연과 WASD 키를 이용한 로봇 조작 체험을 진행했습니다.</p>
+            </div>
+
+            <div class="project-card">
+                <img src="트랙.jpg">
+                <h3>동아리 부스 운영</h3>
+                <p>학교 행사에서 로봇 체험 부스를 운영하며  
+                    다양한 트랙 코스와 표지판, 신호등을 활용해 터틀봇 라인트레이싱을 시연했습니다.</p>
+            </div>
+
+            <div class="project-card">
+                <img src="스탑.jpg">
+                <h3>동아리 부장</h3>
+                <p>동아리 부장으로 활동하며  
+                    구성원의 역할을 분배하고 일정 조율을 진행했으며 ROS 관련 학습 내용을 공유했습니다.</p>
+            </div>
+
+        </div>
+    </section>
+</article>
+
+        <article id="External-Activities" class="content-section">
+    <section class="subject-section">
+        <h2></h2>
+
+        <div class="project-grid">
+
+            <div class="project-card">
+                <img src="반.jpg">
+                <h3>반크 글로벌 AI대사</h3>
+                <p>반크(VANK) 활동을 통해 AI가 한국에 대해 잘못 설명하는 정보를 확인하고 이를 바로잡는 활동에 참여했습니다. 활동 초반에는 교육 영상을 통해 AI가 한국 역사에 대해 부정확하게 설명하는 사례들을 살펴보았습니다.
+                    이후 직접 AI 정보를 확인하는 과정에서 ChatGPT가 한국의 드론 법규에 대해 잘못된 내용을 설명하고 있다는 것을 발견했습니다. 이를 바탕으로 시민 정책 제안 플랫폼에 관련 글을 작성하고, 다른 참여자들의 의견과 경기도의 AI 정책 자료를 참고하며 문제를 분석했습니다.
+                    마지막으로 OpenAI에 ChatGPT의 한국 드론 법규 정보가 잘못되었다는 수정 요청을 제출했고, 이후 해당 정보가 올바르게 수정되는 변화를 확인할 수 있었습니다.
+                    또한 활동 과정에서 브라질 친구와 교류하며 한국에 대한 인식과 AI 활용 방식에 대해 이야기를 나누는 경험도 할 수 있었습니다. 이를 통해 AI 정보의 정확성과 국제적인 소통의 중요성을 배우게 되었습니다.</p>
+            </div>
+
+            <div class="project-card">
+                <img src="독일.jpg">
+                <h3>독일 글로벌 현장학습</h3>
+                <p>독일 기술 직업학교 TBZ(Technische Berufliche Schule) 교환 프로그램에 참여하여 독일 학생 가정에서 홈스테이를 하며 학교 수업과 산업 현장을 경험했습니다.
+                    학교에서는 Unity를 활용해 로봇팔을 움직이는 프로그램을 만들어 보았고, 수학 수업에서는 문제집 중심 학습이 아닌 팀 프로젝트 방식으로 실험적인 수학 문제를 해결하는 활동에 참여했습니다. 또한 물리 수업에서는 지구와 관련된 과학 개념을 배우고, 독일어 수업을 통해 기본적인 의사소통도 익혔습니다.
+                    산업 현장 탐방으로 Mercedes-Benz 공장을 방문하여 로봇이 자동차 부품을 조립하는 자동화 공정을 관찰했으며, Airbus에서는 다양한 항공기와 전투기 시스템, 항공 제어 기술, 우주 발사 관련 기술에 대해 배울 수 있었습니다. 또한 로봇 축구 기술을 개발하는 기업도 방문하며 로봇 기술의 다양한 활용 사례를 경험했습니다.
+                    이 경험을 통해 기술 교육 방식의 차이와 실제 산업 현장에서 활용되는 자동화·항공·로봇 기술을 직접 이해할 수 있었습니다.</p>
+            </div>
+
+
+        </div>
+    </section>
+</article>
+
+    <article id="Conference" class="content-section">
+    <section class="subject-section">
+        <h2>External-Activities</h2>
+
+        <div class="project-grid">
+
+            <div class="project-card">
+                <img src="연.jpg">
+                <h3>연합뉴스 포럼</h3>
+                <p>연합뉴스가 주최한 AI 관련 포럼에 참여하여 인공지능 기술의 발전과 사회적 영향에 대해 들을 수 있었습니다. 포럼에서는 AI가 산업, 경제, 미디어 등 다양한 분야에서 활용되며 사회 변화를 이끌고 있다는 점이 소개되었습니다.
+                    또한 AI 기술이 가져올 미래 변화와 함께 데이터 활용, 기술 윤리, 책임 있는 AI 사용의 중요성에 대한 논의도 이루어졌습니다. 이를 통해 인공지능은 단순한 기술을 넘어 사회와 밀접하게 연결된 분야이며, 기술 발전과 함께 윤리적 기준과 책임 있는 활용이 중요하다는 점을 이해하게 되었습니다.</p>
+            </div>
+
+            <div class="project-card">
+                <img src="AI.jpeg">
+                <h3>국제AI인권장전 세미나</h3>
+                <p>고려대학교에서 진행한 AI 인권장전 세미나(영어 진행)에 참여하여 AI 기술과 인권의 관계에 대해 학습과 대학교 교수님들과 빅테크 기업의 의견을 들었습니다.
+                    AI는 의료 등 다양한 분야에서 인권 보호에 도움을 줄 수 있지만, 과거 데이터를 학습하는 과정에서 기존 사회의 차별을 그대로 반영할 수 있다는 점이 논의되었습니다. 또한 자율주행차 사고와 같이 AI 판단의 책임 문제, 알고리즘 편향으로 인한 인권 침해 가능성도 다뤄졌습니다.
+                    이를 통해 AI 시대에는 기술의 효율성뿐 아니라 공정성, 안전성, 그리고 ‘설명을 받을 권리’와 같은 새로운 인권 개념이 중요하다는 점을 이해하게 되었습니다.</p>
+            </div>
+
+        </div>
+    </section>
+</article>
+
+    <article id="Projects" class="content-section">
+    <section class="subject-section">
+        <h2>Projects</h2>
+
+        <div class="project-grid">
+
+            <div class="project-card">
+                <img src="아이엠스타.jpg">
+                <h3>웹 구상 설명</h3>
+                <p>아이엠스타 영화를 보고
+                    옷을 슬롯에 넣어 랜덤으로 스타일을 추천하는
+                    웹 서비스를 만들어 보고 싶다는 생각이 들었습니다.
+                    HTML, CSS, JavaScript를 처음 활용하여
+                    사용자의 옷을 아이엠스타 카드 형식으로 등록하고
+                    랜덤으로 스타일과 추구미가 바뀌는
+                    슬롯머신 형태의 웹을 기획했습니다.</p>
+            </div>
+
+            <div class="project-card">
+                <img src="코.jpg">
+                <h3>SW기술</h3>
+                <p>HTML, CSS, JavaScript를 활용하여
+                    랜덤으로 스타일이 바뀌는 슬롯머신 기능을 구현했습니다.
+                    JavaScript의 랜덤 함수와 이벤트를 활용하여
+                    버튼을 누르면 카드와 스타일이 변경되도록 제작했으며
+                    CSS를 활용해 아이엠스타 카드 형식의 디자인을 구현했습니다.</p>
+            </div>
+
+            <div class="project-card">
+                <img src="배운점.jpg">
+                <h3>배운점 & 분석</h3>
+                <p>처음으로 HTML, CSS, JavaScript를 활용해
+                    웹 기능을 직접 구현하며
+                    프론트엔드 개발의 기본 구조를 이해할 수 있었습니다.
+                    또한 영상을 제작해 공유했을 때
+                    3만 회 이상의 조회수를 기록하며
+                    콘텐츠 반응을 통해 아이디어의 흥미성과 가능성을 확인했습니다.
+                    이 경험을 통해
+                    콘텐츠 제작 시 저작권을 올바르게 사용하는 것의
+                    중요성도 배우게 되었습니다.</p>
+            </div>
+
+        </div>
+    </section>
+</article>
+    
+        <article id="Certificates" class="content-section">
+    <section class="subject-section">
+        <h2>Certificates</h2>
+
+        <div class="project-grid">
+
+            <div class="project-card">
+                <img src="ITQ.jpg">
+                <h3>ITQ 엑셀</h3>
+                <p>ITQ 엑셀 자격증을 취득하며
+                    데이터 입력, 함수 활용, 표 작성,
+                    차트 제작 등 기본적인 엑셀 활용 능력을 익혔습니다.
+                    엑셀을 활용한 데이터 정리와
+                    문서 작성 능력을 향상시켰습니다.</p>
+            </div>
+
+            <div class="project-card">
+                <img src="linux.jpg">
+                <h3>리눅스 마스터 2급</h3>
+                <p>리눅스마스터 2급 자격증을 취득하며
+                    리눅스 운영체제의 기본 개념과 명령어 활용,
+                    파일 및 디렉터리 관리, 사용자 관리 등의
+                    기초적인 시스템 운영 지식을 학습했습니다.</p>
+            </div>
+
+            <div class="project-card">
+                <img src="정처기.jpg">
+                <h3>정보처리 기능사 필기</h3>
+                <p>일상 속 불편함을 해결하기 위한 앱 아이디어를 기획했습니다.</p>
+            </div>
+
+        </div>
+    </section>
+</article>
+
+
+        <article id="빵지술래" class="content-section">
+    <section class="subject-section">
+        <h2>빵지술래</h2>
+
+        <div class="project-grid">
+
+            <div class="project-card">
+                <img src="빵지술래.jpg">
+                <h3>로봇 구상 설명</h3>
+                <p>대전의 ‘빵지술래 택시’에서 영감을 받아
+                    사용자가 특정 지역의 빵집을 추천해 달라고 말하면
+                    로봇이 추천 빵집 리스트를 출력해 주는 시스템을 구상했습니다.
+                    출력된 추천 목록의 QR 코드를 통해
+                    빵집 정보와 이동 경로를 확인할 수 있도록 설계했습니다.이 아이디어는 졸업작품때 만들기로 하였습니다.</p>
+            </div>
+
+            <div class="project-card">
+                <img src="sw.jpg">
+                <h3>SW기술</h3>
+                <p>사용자의 음성 또는 입력을 통해
+                    특정 지역의 빵집을 추천하는 시스템을 구상하고,
+                    추천 결과는 영수증 형태로 출력되며
+                    QR 코드를 통해 빵집 정보와 이동 경로를 확인할 수 있도록
+                    소프트웨어 구조를 구상했습니다.</p>
+            </div>
+
+            <div class="project-card">
+                <img src="hw.webp">
+                <h3>HW기술</h3>
+                <p>로봇이 실제 환경에서 이동하며
+                    사용자에게 추천 정보를 제공할 수 있도록
+                    자율주행 기능과 출력 장치를 포함한
+                    로봇 하드웨어 구조를 구상했습니다.</p>
+            </div>
+
+        </div>
+    </section>
+</article>
+
+
+        <article id="덕질지도" class="content-section">
+    <section class="subject-section">
+        <h2>덕질지도</h2>
+
+        <div class="project-grid">
+
+            <div class="project-card">
+                <img src="덕질지도.jpg">
+                <h3>웹 구상 설명</h3>
+                <p>홍대를 방문하기 전 방문할 매장을 미리 계획했던 경험에서
+                    아이디어를 얻어 나만의 덕질 지도를 구상했습니다.
+                    사용자가 방문한 매장의 정보와 구매한 상품 사진,
+                    사용 금액 등을 기록하고 정리할 수 있는
+                    개인 취향 기반 지도 서비스를 기획했습니다.</p>
+            </div>
+
+            <div class="project-card">
+                <img src="sw.jpg">
+                <h3>SW기능</h3>
+                <p>사용자가 방문한 매장을 지도에 기록하고
+                    구매한 상품 사진과 사용 금액을 함께 저장할 수 있는 기능을 설계했습니다.
+                    또한 매장별로 어떤 만화나 굿즈를 주로 판매하는지
+                    정보를 정리할 수 있는 개인 기록형 지도 서비스를 구상했습니다.</p>
+            </div>
+
+
+        </div>
+    </section>
+</article>
+
+
+    
+    <article id="다이어리" class="content-section">
+    <section class="subject-section">
+        <h2>다이어리</h2>
+
+        <div class="project-grid">
+
+            <div class="project-card">
+                <img src="다이어리.jpg">
+                <h3>웹 구상 설명</h3>
+                <p>고립 청년들이 자신의 감정을 기록하고
+                    다른 사람과 경험을 공유할 수 있도록
+                    다이어리 형태의 웹 서비스를 구상했습니다.
+                    사용자는 자신의 감정과 하루의 경험을 기록하고
+                    인생네컷 QR 코드를 통해 사진을 다이어리에 저장할 수 있으며
+                    다른 사용자와 교환 일기를 작성하며 경험을 나눌 수 있습니다.
+                    또한 사용자가 스스로를 표현할 수 있도록
+                    손글씨 폰트, 색상, 스티커 등을 활용해
+                    자신만의 감성 다이어리를 꾸밀 수 있도록 기획했습니다.</p>
+            </div>
+
+            <div class="project-card">
+                <img src="sw.jpg">
+                <h3>SW기술</h3>
+                <p>사용자가 감정과 하루의 경험을 기록할 수 있는
+                    온라인 다이어리 기능을 설계했습니다.
+                    감정 키워드를 기반으로 기록을 분류하여
+                    비슷한 감정을 모아볼 수 있도록 하고
+                    다른 사용자와 교환 일기를 작성할 수 있는 기능을 구상했습니다.
+                    또한 일정 시간에 '출근하기' 버튼을 누르면
+                    하루의 작은 미션이 제공되고
+                    사용자는 퇴근 시간 전까지 미션 결과를 기록하는
+                    일상 참여형 기능을 설계했습니다.</p>
+            </div>
+
+            <div class="project-card">
+                <img src="id.png">
+                <h3>공모전 참여</h3>
+                <p>친구와 함께 아이디어를 발전시켜
+                    ‘모두의 아이디어 공모전’을 준비하고 있습니다.
+                    고립 청년들이 자신의 감정을 기록하고
+                    다른 사람과 교환 일기를 통해 경험을 공유하며
+                    일상 속 작은 미션을 통해 사회와 연결될 수 있는
+                    웹 서비스 아이디어를 제안했습니다.</p>
+            </div>
+
+        </div>
+    </section>
+</article>
+
+<a href="projects/web-project.html" class="project-link">
+<div class="project-card reveal">
+
+    <img src="images/webproject.jpg">
+
+    <h3>웹 포트폴리오 제작</h3>
+
+    <p>
+    HTML, CSS, JavaScript를 사용해
+    포트폴리오 사이트를 제작했습니다.
+    </p>
+
+</div>
+</a>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
